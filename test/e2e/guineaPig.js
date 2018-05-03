@@ -22,6 +22,8 @@ module.exports = { // addapted from: https://git.io/vodU0
       It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
       )
       .pause(2500)
+        .assert.containsText('a[href="/test-guinea-pig2.html"]','i am a link')
+        .pause(2500)
       .saveScreenshot(config.imgpath(browser) + 'nightwatch-roolz.png')
       .pause(1000)
       .end();
