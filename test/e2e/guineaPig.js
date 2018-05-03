@@ -8,6 +8,7 @@ module.exports = { // addapted from: https://git.io/vodU0
       .waitForElementVisible('body')
       .pause(1000)
       .assert.title('I am a page title - Sauce Labs')
+      .assert.containsText('a[id="i am a link"]','i am a link')
       .saveScreenshot(config.imgpath(browser) + 'a-screenshot-description.png')
       .pause(1000)
       .clearValue('#i_am_a_textbox')
@@ -21,6 +22,8 @@ module.exports = { // addapted from: https://git.io/vodU0
       It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
       It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
       )
+      .pause(500)
+      
       .pause(2500)
       .saveScreenshot(config.imgpath(browser) + 'nightwatch-roolz.png')
       .pause(1000)
