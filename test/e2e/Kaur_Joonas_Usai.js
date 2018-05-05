@@ -10,9 +10,12 @@ module.exports = { // addapted from: https://git.io/vodU0
       .waitForElementVisible('body')
       .pause(1000)
       .saveScreenshot(config.imgpath(browser) + 'telia.png');
+    
     //npm run test "Folder Path(test/e2e/'name')"
     // click
     browser
+        .assert.visible('#email')
+        .assert.visible('[type="password"]')
         .pause(1000)
         .setValue('#email', 'proov9999@online.ee')
         .pause(1000)
@@ -24,7 +27,6 @@ module.exports = { // addapted from: https://git.io/vodU0
         .pause(2500)
         .saveScreenshot(config.imgpath(browser) + 'telia.png')
         .pause(2000)
-        .assert.title('Online.ee (1)')
         .click('.common-label-sendNewMail')
         .pause(2000)
         .setValue('#newmailToForm','proov9999@online.ee')
@@ -34,6 +36,8 @@ module.exports = { // addapted from: https://git.io/vodU0
         .pause(1000)
         .click('.newmailSendButton')
         .waitForElementVisible('body')
+        .pause(2000)
+        .click('#senderLabelMouseOverAction')
         .pause(5000)
         .saveScreenshot(config.imgpath(browser) + 'telia.png')
         .pause(5000)
