@@ -23,6 +23,7 @@ module.exports = { // addapted from: https://git.io/vodU0
     browser
       .url("https://www.rahvaraamat.ee/user/login/et?redirect=https%3A%2F%2Fwww.rahvaraamat.ee%2Fsite%2Fmessage%2Fet&layout=popup")
       .waitForElementVisible('body')
+      .assert.title('RahvaRaamat - Login User')
       .setValue('input[type=text]','YeetMeez@gmail.com')
       .pause(1000)
       .setValue('input[type=password]','Yeet6Meez')
