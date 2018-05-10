@@ -21,16 +21,18 @@ module.exports = { // addapted from: https://git.io/vodU0
     },
     "Login Page Loads" : function (browser) {
     browser
-      .url("https://www.rahvaraamat.ee/user/login/et?redirect=https%3A%2F%2Fwww.rahvaraamat.ee%2Fsite%2Fmessage%2Fet&layout=popup")
-      .waitForElementVisible('body')
-      .setValue('input[type=text]','YeetMeez@gmail.com')
-      .pause(1000)
-      .setValue('input[type=password]','Yeet6Meez')
-      .pause(3000)
-      .click('input[type=submit]')
-      .pause(5000)
-      .saveScreenshot(config.imgpath(browser) + 'rahva3.png')
-      .assert.containsText('li[class=msg-ok]','Oled sisse loginud!')
-      .end();
+        .url("https://www.rahvaraamat.ee/user/login/et?redirect=https%3A%2F%2Fwww.rahvaraamat.ee%2Fsite%2Fmessage%2Fet&layout=popup")
+        .waitForElementVisible('body')
+        .assert.title('RahvaRaamat - Login User')
+        .pause(1000)
+        .setValue('input[type=text]','YeetMeez@gmail.com')
+        .pause(1000)
+        .setValue('input[type=password]','Yeet6Meez')
+        .pause(3000)
+        .click('input[type=submit]')
+        .pause(5000)
+        .saveScreenshot(config.imgpath(browser) + 'rahva3.png')
+        .assert.containsText('li[class=msg-ok]','Oled sisse loginud!')
+        .end();
   },
 };
