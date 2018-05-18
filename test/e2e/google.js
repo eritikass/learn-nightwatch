@@ -4,17 +4,17 @@ module.exports = { // addapted from: https://git.io/vodU0
   '@tags': ['google'],
   'Open google': function(browser) {
     browser
-        .url('https:/www.google.ee/')
-        .pause(1000)
-        .waitForElementVisible('body')
-        .pause(1000)
-        .saveScreenshot(config.imgpath(browser) + 'google1.png')
-
-    // search kassid    
+      .url('https://www.google.ee/')
+      .pause(1000)
+      .waitForElementVisible('body')
+      .pause(1000)
+      .saveScreenshot(config.imgpath(browser) + 'google1.png');
+    
+    // search kassid
     browser
-        .setValue('#lst-ib', ['kassid', browser.Keys.ENTER])
+        .setValue('#lst-ib', ['cat', browser.Keys.ENTER])
         .saveScreenshot(config.imgpath(browser) + 'google2.png')
-        .pause(1000)
+        .pause(10000)
         .saveScreenshot(config.imgpath(browser) + 'google3.png')
         .assert.containsText('body', 'kass')
         .end();
