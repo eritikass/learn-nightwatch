@@ -13,7 +13,8 @@
     "upload": "node test/e2e/upload_screenshots_to_s3.js",
     "dropbox-upload": "dropbox-upload",
     "e2e": "npm run sauce; npm run upload",
-    "dev": "nodemon -w test/index.html --delay 250ms --exec 'npm run upload'"
+    "dev": "nodemon -w test/index.html --delay 250ms --exec 'npm run upload'",
+    "lint": "eslint --format node_modules/eslint-friendly-formatter test"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,8 @@
   "dependencies": {
     "dropbox": "^4.0.4",
     "dropbox-upload": "^1.0.8",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-import-order-autofix": "^0.8.3",
     "glob": "^7.1.2",
     "nightwatch": "^0.9.9",
     "node-fetch": "^2.1.2",
@@ -38,6 +41,9 @@
     "aws-sdk": "^2.7.13",
     "chromedriver": "^2.33.2",
     "env2": "^2.1.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
     "mime-types": "^2.1.13",
     "nodemon": "^1.11.0",
     "selenium-server": "^3.8.1"
