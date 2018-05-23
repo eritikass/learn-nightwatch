@@ -34,6 +34,7 @@ script:
   - ls -l screenshots
   - ls -l screenshots/*/*
   - node test/e2e-ignore/dropbox.js
+  - npm run lint
 
 notifications:
   email: false
