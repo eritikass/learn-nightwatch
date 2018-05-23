@@ -30,7 +30,7 @@ before_script:
   - sleep 3 #wait a while before xvfb to start
 
 script:
-
+  - npm run lint
   - npm test test/e2e/Siim_Raudsepp_rahvaraamat.js
   - ls -l screenshots
   - ls -l screenshots/*/*
