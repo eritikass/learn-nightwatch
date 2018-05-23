@@ -26,5 +26,3 @@ module.exports = {
       .end();
   },
 };
-
-// <a href="javascript:void(0)" onclick="_gaq.push(['_trackEvent', 'UX', 'Üldine', 'Link Välju']);">Välju</a>
