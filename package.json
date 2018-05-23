@@ -33,6 +33,7 @@
     "aws-sdk": "^2.7.13",
     "chromedriver": "^2.33.2",
     "env2": "^2.1.1",
+    "eslint": "^4.19.1",
     "mime-types": "^2.1.13",
     "nodemon": "^1.11.0",
     "selenium-server": "^3.8.1"
