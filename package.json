@@ -9,6 +9,7 @@
   "scripts": {
     "test": "nightwatch --env local",
     "ie": "nightwatch -e ie11",
+    "lint": "eslint test",
     "sauce": "nightwatch -e chrome,ie11,android_s4_emulator,iphone_6_simulator",
     "upload": "node test/e2e/upload_screenshots_to_s3.js",
     "e2e": "npm run sauce; npm run upload",
@@ -35,7 +36,11 @@
     "env2": "^2.1.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
     "mime-types": "^2.1.13",
     "nodemon": "^1.11.0",
     "selenium-server": "^3.8.1"

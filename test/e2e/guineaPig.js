@@ -1,8 +1,8 @@
-var config = require('../../nightwatch.conf.js');
+var config = require('../../nightwatch.conf.js')
 
 module.exports = { // addapted from: https://git.io/vodU0
   '@tags': ['guineaPig'],
-  'Guinea Pig Assert Title': function(browser) {
+  'Guinea Pig Assert Title': function (browser) {
     browser
       .url('https://saucelabs.com/test/guinea-pig')
       .waitForElementVisible('body')
@@ -24,6 +24,6 @@ module.exports = { // addapted from: https://git.io/vodU0
       .pause(2500)
       .saveScreenshot(config.imgpath(browser) + 'nightwatch-roolz.png')
       .pause(1000)
-      .end();
+      .end()
   }
-};
+}
