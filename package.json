@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "nightwatch --env local",
+    "lint": "eslint test --format=unix",
     "ie": "nightwatch -e ie11",
     "sauce": "nightwatch -e chrome,ie11,android_s4_emulator,iphone_6_simulator",
     "upload": "node test/e2e/upload_screenshots_to_s3.js",
@@ -28,6 +29,8 @@
   "dependencies": {
     "dropbox": "^4.0.4",
     "dropbox-upload": "^1.0.8",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
     "glob": "^7.1.2",
     "nightwatch": "^0.9.9",
     "node-fetch": "^2.1.2",
@@ -38,6 +41,7 @@
     "aws-sdk": "^2.7.13",
     "chromedriver": "^2.33.2",
     "env2": "^2.1.1",
+    "eslint": "^4.19.1",
     "mime-types": "^2.1.13",
     "nodemon": "^1.11.0",
     "selenium-server": "^3.8.1"

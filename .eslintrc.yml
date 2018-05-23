@@ -1,0 +1,10 @@
+extends: 
+  - airbnb-base
+
+globals:
+  fetch: true
+
+rules:
+  no-console: off
+  func-names: off
+
