@@ -5,9 +5,9 @@ var path = require('path')
 var AWS = require('aws-sdk')
 var mime = require('mime-types')
 AWS.config.region = process.env.AWS_REGION
-var s3bucket = new AWS.S3({params: {Bucket: process.env.AWS_S3_BUCKET}})
+// const s3bucket = new AWS.S3({params: {Bucket: process.env.AWS_S3_BUCKET}})
 
-function s3_create () {
+function s3Create () {
   if (!process.env.AWS_ACCESS_KEY_ID) {
     console.log(`If you want to upload Screenshots to S3
       please set your AWS Environment Variables (see readme).`)
@@ -15,7 +15,7 @@ function s3_create () {
     var SP = conf.SCREENSHOT_PATH
     var version = SP.split('/')[ SP.split('/').length - 2 ]
     fs.writeFileSync(conf.SCREENSHOT_PATH + 'index.html', // don't overwrite index
-      fs.readFileSync(path.join(__dirname + '/index.html')), 'utf8')
+      fs.readFileSync(path.join(__dirname, '/index.html')), 'utf8')
     // fs.createReadStream(path.join(__dirname + '/index.html'))
     //   .pipe(fs.createWriteStream(conf.SCREENSHOT_PATH + 'index.html'));
     // fist read the list of screenshots
@@ -53,4 +53,4 @@ function s3_create () {
     })
   }
 }
-s3_create()
+s3Create()
