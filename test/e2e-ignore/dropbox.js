@@ -19,7 +19,7 @@ if (process.env.TRAVIS !== 'true') {
     uploadPath += `/local/${+ new Date()}`;
 } else {
     // is ci
-    uploadPath += `/ci/${process.env.TRAVIS_BRANCH}/${process.env.TRAVIS_JOB_ID}`;
+    uploadPath += `/ci/${process.env.TRAVIS_EVENT_TYPE}/${process.env.TRAVIS_BRANCH}/${process.env.TRAVIS_BUILD_ID}`;
 }
 
 console.log('uploadPath', uploadPath);
@@ -27,7 +27,7 @@ console.log('uploadPath', uploadPath);
 var dbx = new Dropbox({ accessToken: DROPBOX_TOKEN });
 
 function upload(filename) {
-    fs.readFile(filename, 'utf8', function (err, contents) {
+    fs.readFile(filename, null, function (err, contents) {
 
         if (err) {
             console.error('Error: ', err);
