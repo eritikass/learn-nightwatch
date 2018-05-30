@@ -2,7 +2,7 @@ const config = require('../../nightwatch.conf.js');
 
 module.exports = { // addapted from: https://git.io/vodU0
   '@tags': ['ekspress'],
-  'Open ekspress': function (browser) {
+  'Case 1': function (browser) {
     browser
         .url('http://ekspress.delfi.ee')
         .pause(1000)
@@ -10,8 +10,11 @@ module.exports = { // addapted from: https://git.io/vodU0
         .saveScreenshot(`${config.imgpath(browser)}StartCase1.png`)
         .click('a[class="navigation-arrow-link navigation-arrow-link-right issue-cover-start-reading"]')
         .pause(3000)
-        .saveScreenshot(`${config.imgpath(browser)}AfterClickingNext1.png`);
+        .saveScreenshot(`${config.imgpath(browser)}AfterClickingNext1.png`)
+        .end();
+    },
 
+    'Case 2': function (browser) {
     browser
         .url('http://ekspress.delfi.ee')
         .pause(1000)
@@ -34,8 +37,11 @@ module.exports = { // addapted from: https://git.io/vodU0
         .saveScreenshot(`${config.imgpath(browser)}AfterOpeningSideBar.png`)
         .click('div[class="sidebar-item sidebar-item-1"]')
         .pause(3000)
-        .saveScreenshot(`${config.imgpath(browser)}AfterClickingOnSideBarArticle.png`);
+        .saveScreenshot(`${config.imgpath(browser)}AfterClickingOnSideBarArticle.png`)
+        .end();
+    },
 
+    'Case 3': function (browser) {
     browser
         .url('http://ekspress.delfi.ee')
         .pause(1000)
@@ -44,6 +50,9 @@ module.exports = { // addapted from: https://git.io/vodU0
         .click('a[class="button menu-button js-toggle-left-menu"]')
         .pause(1000)
         .saveScreenshot(`${config.imgpath(browser)}AfterOpeningMenuCase3.png`)
+        .click('.menu-content div:nth-child(5) a')
+        .pause(3000)
+        .saveScreenshot(`${config.imgpath(browser)}AfterClickingOnSearch.png`)
         .end();
   },
 };
