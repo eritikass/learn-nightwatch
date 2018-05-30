@@ -34,6 +34,9 @@ script:
   - npm test test/e2e/google.js
   - ls -l screenshots
   - ls -l screenshots/*/*
+  - npm test test/e2e/jegorov_twitter.js
+  - npm test test/e2e/kaspar_jegorov_ekspress.js
+
 
 notifications:
   email: false
