@@ -13,7 +13,10 @@ module.exports = { // addapted from: https://git.io/vodU0
       .setValue('.js-password-field', 'JustGetAHouse')
       .click('button[type="submit"]')
       .pause(5000)
-      .assert.containsText('a[class="u-textInheritColor js-nav"]', 'JustGetAHouse4H')
+      .assert.containsText('a[class="u-textInheritColor js-nav"]', 'Just GetAHouse')
+      .pause(1000)
+      .saveScreenshot(`${config.imgpath(browser)}twitterhomepage.png`)
+      .pause(500)
       .end();
   },
 };
