@@ -1,9 +1,8 @@
 const config = require('../../nightwatch.conf.js');
-
+// Made by Martin Ploompuu
 module.exports = { // addapted from: https://git.io/vodU0
   '@tags': ['soov'],
   'Open soov': function (browser) {
-    // load google
     browser
       .url('https://soov-ee.postimees.ee/')
       .pause(1000)
