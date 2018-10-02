@@ -21,14 +21,16 @@ module.exports = {
       .click('div[class="form-item item-submit"]')
     //Valib auto
     browser
-      .pause(3000)
+      .pause(1000)
       .saveScreenshot(`${config.imgpath(browser)}Auto24(results).png`)
       .click('a[href="/used/2923043"]')
       .saveScreenshot(`${config.imgpath(browser)}Auto24(car).png`)
-      .pause(1000)
-    //Valib auto pildi, TBA
+    //Valib auto pildi
     browser
-
+      .pause(1000)
+      .click('a[href="/webcache_kasutatud/043/auto_php-id=2923043-view=30-www_auto24_ee.html"]')
+      .pause(1000)
+      .saveScreenshot(`${config.imgpath(browser)}Auto24(car picture).png`)
+      .end();
   }
-
 };
