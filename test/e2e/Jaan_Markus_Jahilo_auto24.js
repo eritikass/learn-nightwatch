@@ -19,8 +19,14 @@ module.exports = {
       .pause(100)
       .saveScreenshot(`${config.imgpath(browser)}Auto24(before submit).png`)
       .click('div[class="form-item item-submit"]')
-      .pause(1000);
-    //Valib auto, TBA
+    //Valib auto
+    browser
+      .pause(3000)
+      .saveScreenshot(`${config.imgpath(browser)}Auto24(results).png`)
+      .click('a[href="/used/2923043"]')
+      .saveScreenshot(`${config.imgpath(browser)}Auto24(car).png`)
+      .pause(1000)
+    //Valib auto pildi, TBA
     browser
 
   }
