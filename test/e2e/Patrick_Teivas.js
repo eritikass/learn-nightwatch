@@ -1,19 +1,20 @@
 const config = require('../../nightwatch.conf.js');
 
+//Patrick Teivas TA-17E
+
 module.exports = { // addapted from: https://git.io/vodU0
-  '@tags': ['mangukoobas'],
-  'manguoobas': function (browser) {
-    // load mangukoobas
+  '@tags': ['y8'],
+  'y8': function (browser) {
+    // load y8.com
     browser
-      .url('http://mangukoobas.ee/')
+      .url('https://y8.com')
       .pause(1000)
       .waitForElementVisible('body')
+      .saveScreenshot(`${config.imgpath(browser)}y8-1.png`)
       .pause(1000)
-      .saveScreenshot(`${config.imgpath(browser)}mangukoobas1.png`)
+      .click('a[href="/games/slope"]')
       .pause(1000)
-      .click('a[href="/id/5/action/themes/channel/1/"]')
-      .pause(1000)
-      .saveScreenshot(`${config.imgpath(browser)}mangukoobas2.png`)
+      .saveScreenshot(`${config.imgpath(browser)}y8-2.png`)
       .pause(1000)
       .end();
   },
