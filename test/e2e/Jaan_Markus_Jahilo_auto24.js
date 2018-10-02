@@ -8,9 +8,16 @@ module.exports = {
       .pause(100)
       .waitForElementVisible('body')
       .pause(100)
-      .click('a[class="menu-item makes first multirow"]')
-      .saveScreenshot(`${config.imgpath(browser)}auto24.png`)
-      .pause(1000)
-      .end();
+      .click('#searchParam-cmm-1-make')
+      .pause(100)
+      .setValue('#searchParam-cmm-1-make', "Audi")
+      .click('#searchParam-cmm-1-model_id')
+      .pause(100)
+      .setValue('#searchParam-cmm-1-model_id', "A4")
+      .setValue('input[name="f1"]', "2004")
+      .pause(100)
+      .saveScreenshot(`${config.imgpath(browser)}Auto24(before submit).png`)
+      .click('div[class="form-item item-submit"]')
+      .pause(1000);
   }
 };
