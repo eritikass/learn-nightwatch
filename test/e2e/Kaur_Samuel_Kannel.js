@@ -44,7 +44,7 @@ module.exports = { // addapted from: https://git.io/vodU0
       .pause(1000)
       .click('li[class="page_item page-item-89"]')
       .pause(10000)
-      browser.Keys.SPACE
+      
       .end();
 
       
