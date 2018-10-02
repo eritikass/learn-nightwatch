@@ -13,11 +13,11 @@ module.exports = { // addapted from: https://git.io/vodU0
 
     // search kassid
     browser
-      .setValue('#lst-ib', ['cat', browser.Keys.ENTER])
+      .setValue('#lst-ib', ['pussy', browser.Keys.ENTER])
       .saveScreenshot(`${config.imgpath(browser)}google2.png`)
       .pause(10000)
       .saveScreenshot(`${config.imgpath(browser)}google3.png`)
-      .assert.containsText('body', 'cat')
+      .assert.containsText('body', 'pussy')
       .end();
   },
 };
