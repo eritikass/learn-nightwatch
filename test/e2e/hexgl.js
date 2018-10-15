@@ -14,7 +14,7 @@ module.exports = { // addapted from: https://git.io/vodU0
       .pause(2000)
       .click('#step-2')
       .pause(5000)
-      for (var i = 0; i < 2000; i++) {
+      for (var i = 0; i < 20000; i++) {
         browser.sendKeys('body', 'KEY_UP')
       }
       browser.end()
