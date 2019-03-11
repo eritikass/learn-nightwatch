@@ -30,4 +30,17 @@ module.exports = { // addapted from: https://git.io/vodU0
       .pause(1000)
       .end();
   },
+  'Ekspress, case 3': function (browser) {
+    browser
+      .url('http://ekspress.delfi.ee')
+      .pause(1000)
+      .waitForElementVisible('body')
+      .click('a[class="header__menu-burger toggle-sidebar"]')
+      .pause(1000)
+      .saveScreenshot(`${config.imgpath(browser)}Ekspressmenu.png`)
+      .click('li[class="channels__item"]:nth-child(5) a')
+      .pause(5000)
+      .saveScreenshot(`${config.imgpath(browser)}Ekspresskrimi.png`)
+      .end();
+  },
 };
