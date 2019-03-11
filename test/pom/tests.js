@@ -14,5 +14,6 @@ module.exports = {
     browser.pause(5000);
     utils(browser).logout();
     browser.end();
+	
   },
 };
