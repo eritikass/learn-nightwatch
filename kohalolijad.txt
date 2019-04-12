@@ -1,0 +1,4 @@
+//document.querySelectorAll('#student_row_6802_data.daybook_row>span[title="Puudumine"]')
+// õpilase numbri järgi tptlive siseveebi päevikus puudumine
+//document.querySelectorAll('tr[tole=row] td:th-child(4).daybook_row>span[title="Puudumine"]')
+//tulba järgi - mitu puudujat sel päeval
