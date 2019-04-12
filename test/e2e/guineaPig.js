@@ -9,8 +9,11 @@ module.exports = { // addapted from: https://git.io/vodU0
       .assert.title('I am a page title - Sauce Labs')
       .saveScreenshot(`${config.imgpath(browser)}a-screenshot-description.png`)
       .clearValue('#i_am_a_textbox')
-      .setValue('#i_am_a_textbox', 'nightwatch roolz!')
+      .setValue('#i_am_a_textbox', 'GLaDOS')
+	  .setValue('#fbemail', 'ott.joon@tptlive.ee')
+	  .setValue('#comments', "This was a triumph\nI'm writing a note here\nhuge success")
       .saveScreenshot(`${config.imgpath(browser)}nightwatch-roolz.png`)
       .end();
   },
 };
+
