@@ -20,6 +20,7 @@ module.exports = {
       .pause(2000)
       .click('.tile--img__img.js-lazyload')
       .saveScreenshot(`${config.imgpath(browser)}7`)
+      .pause(2000)
       .end();
   },
 };
