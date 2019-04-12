@@ -8,9 +8,10 @@ module.exports = { // addapted from: https://git.io/vodU0
       .waitForElementVisible('body')
       .assert.title('I am a page title - Sauce Labs')
       .saveScreenshot(`${config.imgpath(browser)}a-screenshot-description.png`)
-      .clearValue('#i_am_a_textbox')
-      .setValue('#i_am_a_textbox', 'nightwatch roolz!')
+      .clearValue('#i_am_a_textbox', 'erki@gmail.com')
+      .setValue('#i_am_a_textbox', 'hello')
       .saveScreenshot(`${config.imgpath(browser)}nightwatch-roolz.png`)
+       .paus(1000)
       .end();
   },
 };
