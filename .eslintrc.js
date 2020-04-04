@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     "func-names": "off",
     "no-unused-expressions": "off",
-    "quotes": "off"
+    "quotes": "off",
+    "linebreak-style": "error", "windows"
   },
 };
