@@ -34,3 +34,6 @@ jobs:
     executor: node-ci-executor
     steps:
       - setup-js-job
+      - run:
+          name: "Run visual testing (Nightwatch)"
+          command: npm run test
