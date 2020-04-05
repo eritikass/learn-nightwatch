@@ -37,3 +37,6 @@ jobs:
       - run:
           name: "Run visual testing (Nightwatch)"
           command: npm run test
+      - store_artifacts:
+          path: ./nightwatch
+          destination: artifact-file
