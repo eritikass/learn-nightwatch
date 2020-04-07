@@ -1,0 +1,7 @@
+[0404/104403.522:ERROR:process_memory_win.cc(73)] ReadMemory at 0x208a736de90 of 72 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0404/104403.525:WARNING:pe_image_annotations_reader.cc(134)] could not read annotations list object in C:\Program Files (x86)\Google\Chrome\Application\80.0.3987.149\chrome_elf.dll
+[0404/104403.525:ERROR:process_memory_win.cc(73)] ReadMemory at 0x208a7490000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0404/104403.525:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\System32\ADVAPI32.dll
+[0404/104403.525:ERROR:process_memory_win.cc(73)] ReadMemory at 0x7ff9740e0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0404/104403.527:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\80.0.3987.149\chrome.dll
+[0404/104403.575:ERROR:process_memory_win.cc(73)] ReadMemory at 0x980b700000 of 1048576 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
