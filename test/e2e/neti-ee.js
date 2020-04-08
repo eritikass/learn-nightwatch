@@ -23,5 +23,5 @@ module.exports = {
       .assert.containsText("body", "Meelelahutus ja Hobid") // css
       .end();
   },
-  
+
 };
