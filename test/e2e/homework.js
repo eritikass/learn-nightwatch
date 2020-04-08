@@ -1,5 +1,8 @@
 const config = require("../../nightwatch.conf.js");
 
+
+
+
 module.exports = {
  /* "Riik ja Ühiskond -> Valitsus": function (browser) {
     browser
@@ -33,7 +36,7 @@ module.exports = {
       .useXpath()
       .click("//*[@id='main-content']/div[1]/ul[1]/li[1]/h3/a")
       .assert.urlContains("loomakaitse.eu")
-      .saveScreenshot(`${config.imgpath(browser)}kass.png`)
+      .saveScreenshot(`${config.imgpath(browser)}kassiKaitse.png`)
       .end();
   }, */
  /* "Rate.ee -> Meilikasti test": function (browser) {
@@ -45,7 +48,7 @@ module.exports = {
       .useCss()
       .waitForElementVisible("body", 500) // css
       .assert.containsText("body", "Seda lehte näevad ainult registreeritud kasutajad")
-      .saveScreenshot(`${config.imgpath(browser)}rate.png`)
+      .saveScreenshot(`${config.imgpath(browser)}rateMeil.png`)
       .end();
   }, */
   /* "Example.com test": function (browser) {
@@ -58,7 +61,7 @@ module.exports = {
       .click("a[href='https://www.iana.org/domains/example']")
       .waitForElementVisible('body')
       .assert.title('IANA — IANA-managed Reserved Domains')
-      .saveScreenshot(`${config.imgpath(browser)}IANA.png`)
+      .saveScreenshot(`${config.imgpath(browser)}ianaExample.png`)
       .end();
   },*/
 
@@ -74,13 +77,13 @@ module.exports = {
       .getTitle(function(title) {
         this.assert.ok(title.includes("cat"));
       })
-      .saveScreenshot(`${config.imgpath(browser)}cat.png`)
+      .saveScreenshot(`${config.imgpath(browser)}felisCatus.png`)
       .assert.containsText("a[href='https://en.wikipedia.org/wiki/Cat']", "Wikipedia")
       .click("a[href='https://en.wikipedia.org/wiki/Cat']")
       .assert.containsText("body", "Felis catus")
       .end();
   }, */
-  "NightwatchJS test": function (browser) {
+ /* "NightwatchJS test": function (browser) {
     browser
       .url("https://nightwatchjs.org")
       .waitForElementVisible("body", 2000)
@@ -92,7 +95,24 @@ module.exports = {
       .click("//*[@id='api-container']/div[2]/div/div/div[1]/div/ul/li[2]/a")
       .click("//*[@id='api-container']/div[2]/div/div/div[1]/div/ul/li[2]/ul/li[20]/a")
       .assert.containsText("//*[@id='expect-elements-count']", ".elements().count")
-      .saveScreenshot(`${config.imgpath(browser)}count.png`)
+      .saveScreenshot(`${config.imgpath(browser)}countTitle.png`)
       .end();
-  },
+  }, */
+  "Ekspress test": function (browser) {
+    browser
+      .url("https://ekspress.delfi.ee/")
+      .waitForElementVisible("body", 2000)
+      .useXpath()
+      .click("//*[@id='header']/div[1]/div[2]/div[2]/div[1]/ul/li[5]/a")
+      .click("//*[@id='header']/div[1]/ul/li[3]/a")
+      .click("//*[@id='main']/section/div[12]/a")
+      .click("//*[@id='main']/section/div[12]/a")
+      .useCss()
+      .waitForElementVisible("body", 3000)
+      .useXpath() 
+      .assert.visible("//*[@id='main']/section/div[11]/div[1]/div/div[5]/div/div/a[2]/span")
+      .waitForElementVisible("//*[@id='main']/section/div[11]/div[1]/div/div[5]/div/div/a[2]/span", 2000)
+      .saveScreenshot(`${config.imgpath(browser)}testEkspress.png`)
+      .end();
+  }, 
 };

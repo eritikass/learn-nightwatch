@@ -67,7 +67,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
       desiredCapabilities: {
         browserName: "chrome",
         javascriptEnabled: true,
-        acceptSslCerts: true,
+        acceptSslCerts: true
       },
     },
     chromemac: { // browsers used on saucelabs:
