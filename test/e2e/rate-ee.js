@@ -8,7 +8,7 @@ module.exports = {
       .click("a.nav-link.icn-messages.icn") // piisab a.icn-messages
       .waitForElementVisible("body", 2000)
       .assert.containsText('body', "Seda lehte näevad ainult registreeritud kasutajad.")
-      .saveScreenshot(`${conf.imgpath(browser)}rate-ee-postkast.png`)
+      //.saveScreenshot(`${conf.imgpath(browser)}rate-ee-postkast.png`)
       .end();
   },
 };

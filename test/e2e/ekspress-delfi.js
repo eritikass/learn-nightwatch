@@ -17,8 +17,8 @@ module.exports = {
       .useCss()
       .waitForElementVisible("body", 2000)
       .useXpath()
-      .click('//a[@href=\"?page=3\"]') // lk 3
-      
+      .click('//a[@href=\"?page=3\"]') // p 3
+
       .useCss()
       .waitForElementVisible("body", 2000)
       .assert.containsText("body", "Kasside keele (teaduslik) õpik kassiomanikele") // css
