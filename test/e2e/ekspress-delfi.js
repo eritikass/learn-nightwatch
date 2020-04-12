@@ -1,7 +1,7 @@
 const config = require("../../nightwatch.conf.js");
 
 module.exports = {
-  "Artiklid Areenis": function (browser) {
+  "Articles Areenis": function (browser) {
     browser
       .url("https://ekspress.delfi.ee/")
       .waitForElementVisible("body", 2000)
@@ -13,43 +13,31 @@ module.exports = {
       .useCss()
       .waitForElementVisible("body", 2000)
       .useXpath()
-      .click("//*[@id='main']/section/div[12]/a")  // lk nool
+      .click("//*[@id='main']/section/div[12]/a")  // pager arrow
       .useCss()
       .waitForElementVisible("body", 2000)
       .useXpath()
       .click('//a[@href=\"?page=3\"]') // p 3
-
       .useCss()
-      .waitForElementVisible("body", 2000)
-      .assert.containsText("body", "Kasside keele (teaduslik) õpik kassiomanikele") // css
+      .waitForElementVisible("body", 3000)
+      .assert.containsText("body", "Kasside keele (teaduslik) õpik kassiomanikele")
       .useXpath()
-      //.click("//*[contains(text(), 'Kasside keele')]")
       .click("//a[@href='/areen/kasside-keele-teaduslik-opik-kassiomanikele?id=82101687']")
       .useCss()
       .waitForElementVisible("body", 2000)
-      .expect.element("i.icon").to.be.present;
-      //a.article__listen) // css
-      //.saveScreenshot(`${config.imgpath(browser)}ekspress-delfi.png`)
-      // browser
-      //.assert.containsText("body", "Eestimaa Loomakaitse Liit") // css
-      //.useXpath()
-      //.click("//*[contains(text(), 'Loomakaitse')]")
-      //.useCss()
-      //.assert.urlContains('loomakaitse.eu') // css */
-      //.saveScreenshot(`${config.imgpath(browser)}ekspress-delfi.png`)
-      //.end();
+      .assert.containsText("#article-82101687", "KUULA", '1st article has "Kuula" button')
+      .useXpath()
+      .moveToElement("//*[@id='article-82101687']/div[1]/div/div/div[1]/div[2]/div[3]/div[4]/div/div/div[2]", 10, 10)
+      .assert.visible("//*[@id='article-82101687']/div[1]/div/div/div[1]/div[2]/div[3]/div[4]/div/div/div[2]")
+      .saveScreenshot(`${config.imgpath(browser)}ekspress-delfi-seotudlood.png`)
+      .click('//*[@id="article-82101687"]/div[1]/div/div/div[1]/div[2]/div[3]/div[4]/div/div/div[2]/div[1]/article/a')
+      .useCss()
+      .waitForElementVisible("body", 4000)
+      .pause(6000)
+      .assert.containsText("#article-80187142", "KUULA", '2nd article has "Kuula" button')
+      //.expect.element(".article__listen").to.be.present;
+      .expect.element(".author").to.be.present;
+      browser.saveScreenshot(`${config.imgpath(browser)}ekspress-delfi-art.png`)
+      .end();
   },
-
-
-  //Open "https://ekspress.delfi.ee/"
-  //open "Areen" -> "Kirjandus"
-  //move to 3'rd page
-  //open last article from listing
-  //Check that article has "kuula" button
-  //Scroll to "Loe veel" section
-  //Take screenshot
-  //Open 1'st article
-  //Check that article has "kuula" button
- // Check that article has author
-  //Take screenshot
 };
