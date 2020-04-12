@@ -8,6 +8,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
   src_folders: [
     "test/e2e", // we use '/test' as the name of our test directory by default. So 'test/e2e' for 'e2e'.
   ],
+  disable_error_log: true,
   output_folder: "./nightwatch/reports", // reports (test outcome) output by Nightwatch
   selenium: {
     start_process: true,
