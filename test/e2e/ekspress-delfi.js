@@ -13,11 +13,11 @@ module.exports = {
       .useCss()
       .waitForElementVisible("body", 2000)
       .useXpath()
-      .click("//*[@id='main']/section/div[12]/a")  // pager arrow
+      .click("//*[@id='main']/section/div[12]/a") // pager arrow
       .useCss()
       .waitForElementVisible("body", 2000)
       .useXpath()
-      .click('//a[@href=\"?page=3\"]') // p 3
+      .click('//a[@href="?page=3"]') // p 3
       .useCss()
       .waitForElementVisible("body", 3000)
       .assert.containsText("body", "Kasside keele (teaduslik) õpik kassiomanikele")
@@ -35,9 +35,10 @@ module.exports = {
       .waitForElementVisible("body", 4000)
       .pause(6000)
       .assert.containsText("#article-80187142", "KUULA", '2nd article has "Kuula" button')
-      //.expect.element(".article__listen").to.be.present;
+      //  .expect.element(".article__listen").to.be.present;
       .expect.element(".author").to.be.present;
-      browser.saveScreenshot(`${config.imgpath(browser)}ekspress-delfi-art.png`)
+      browser
+      .saveScreenshot(`${config.imgpath(browser)}ekspress-delfi-art.png`)
       .end();
   },
 };
