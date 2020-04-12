@@ -37,8 +37,7 @@ module.exports = {
       .assert.containsText("#article-80187142", "KUULA", '2nd article has "Kuula" button')
       //  .expect.element(".article__listen").to.be.present;
       .expect.element(".author").to.be.present;
-      browser
-      .saveScreenshot(`${config.imgpath(browser)}ekspress-delfi-art.png`)
+    browser.saveScreenshot(`${config.imgpath(browser)}ekspress-delfi-art.png`)
       .end();
   },
 };
