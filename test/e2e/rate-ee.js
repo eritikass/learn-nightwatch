@@ -8,6 +8,7 @@ module.exports = {
       .click('a.icn-messages')
       .useCss()
       .waitForElementVisible("body", 2000)
+      .assert.containsText("body", "Seda lehte näevad ainult registreeritud kasutajad.") // css
       .saveScreenshot(`${config.imgpath(browser)}rate-ee-kirjakast.png`)
       .end();
   },
