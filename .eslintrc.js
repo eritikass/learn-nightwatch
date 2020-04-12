@@ -18,6 +18,6 @@ module.exports = {
     "func-names": "off",
     "no-unused-expressions": "off",
     "quotes": "off",
-    "linebreak-style": "windows"
+    "linebreak-style": ["error", "windows"]
   },
 };
