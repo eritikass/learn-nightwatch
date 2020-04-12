@@ -1,7 +1,7 @@
 const config = require("../../nightwatch.conf.js");
 
 module.exports = {
-"Riik ja Ühiskond -> Valitsus": function (browser) {
+  "Riik ja Ühiskond -> Valitsus": function (browser) {
     browser
       .url("https://www.neti.ee/")
       .waitForElementVisible("body", 2000) // css
@@ -19,7 +19,7 @@ module.exports = {
       .end();
   },
 
-  "Loomakaitse": function (browser) {
+  Loomakaitse(browser) {
     browser
       .url("https://www.neti.ee/")
       .setValue('input[type=text]', ['kass', browser.Keys.ENTER])
@@ -37,7 +37,6 @@ module.exports = {
       .saveScreenshot(`${config.imgpath(browser)}neti-ee-loomakaitse.png`)
       .end();
   },
-
   /* "Meelelahutus ja Hobid": function (browser) {
     browser
       .url("https://www.neti.ee/")
@@ -45,5 +44,4 @@ module.exports = {
       .assert.containsText("body", "Meelelahutus ja Hobid") // css
       .end();
   }, */
-
 };
