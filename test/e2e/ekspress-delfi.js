@@ -36,7 +36,6 @@ module.exports = {
       .saveScreenshot(`${config.imgpath(browser)}ekspress-delfi-seotudlood.png`)
       .click('//*[@id="article-82101687"]/div[1]/div/div/div[1]/div[2]/div[3]/div[4]/div/div/div[2]/div[1]/article/a')
       .useCss()
-      .waitForElementVisible("body", 4000)
       .pause(6000)
       .assert.containsText("#article-80187142", "KUULA", '2nd article has "Kuula" button')
       // .expect.element(".article__listen").to.be.present;
