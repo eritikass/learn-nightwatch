@@ -7,7 +7,7 @@ module.exports = {
       .waitForElementVisible("body", 2000)
       .setValue('input[type=text]', ['cat', browser.Keys.ENTER])
       .waitForElementVisible("body", 2000)
-      .getTitle(function(title) {
+      .getTitle(function (title) {
         this.assert.ok(title.includes("cat"));
       })
       .saveScreenshot(`${conf.imgpath(browser)}google-com-titlecat.png`)
@@ -16,7 +16,7 @@ module.exports = {
       .click("//*[contains(text(), 'Wikipedia')]")
       .useCss()
       .assert.containsText('body', "Felis catus")
-      .saveScreenshot(`${conf.imgpath(browser)}google-com-feliscatus.png`)
+      //  .saveScreenshot(`${conf.imgpath(browser)}google-com-feliscatus.png`)
       .end();
   },
 };
