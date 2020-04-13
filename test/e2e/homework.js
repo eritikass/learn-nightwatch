@@ -64,21 +64,21 @@ module.exports = {
 
   "Google.com test": function (browser) {
     browser
-      .url("https://www.google.com/")
-      .waitForElementVisible("body", 2000)
-      .setValue('input[type=text]', 'cat')
-      .useXpath()
-      .click("/html/body/div/div[3]/form/div[2]/div[1]/div[2]/div[2]/div[2]/center/input[1]")
-      .useCss()
-      .waitForElementVisible("body", 2000)
-      .getTitle(function (title) {
-        this.assert.ok(title.includes("cat"));
-      })
-      .saveScreenshot(`${config.imgpath(browser)}felisCatus.png`)
-      .assert.containsText("a[href='https://en.wikipedia.org/wiki/Cat']", "Wikipedia")
-      .click("a[href='https://en.wikipedia.org/wiki/Cat']")
-      .assert.containsText("body", "Felis catus")
-      .end();
+    .url("https://www.google.com")
+    .waitForElementVisible("body", 2000)
+    .setValue('input[type=text]', ['cat', browser.Keys.ENTER])
+    .waitForElementVisible("body", 2000)
+    .getTitle(function (title) {
+      this.assert.ok(title.includes("cat"));
+    })
+    .saveScreenshot(`${conf.imgpath(browser)}cat.png`)
+    .assert.containsText('body', "Wikipedia")
+    .useXpath()
+    .click("//*[contains(text(), 'Wikipedia')]")
+    .useCss()
+    .assert.containsText('body', "Felis catus")
+    .saveScreenshot(`${conf.imgpath(browser)}felisCatus.png`)
+    .end();
   },
   "NightwatchJS test": function (browser) {
     browser
