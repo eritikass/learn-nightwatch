@@ -37,7 +37,7 @@ jobs:
       - setup-js-job
       - run:
           name: "Run visual testing (Nightwatch)"
-          command: npm run test
+          command: npm run test -- test/e2e/homework.js
       - store_artifacts:
           path: ./nightwatch
           destination: artifact-file

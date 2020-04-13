@@ -1,10 +1,8 @@
 const config = require("../../nightwatch.conf.js");
 
 
-
-
 module.exports = {
- "Riik ja Ühiskond -> Valitsus": function (browser) {
+  "Riik ja Ühiskond -> Valitsus": function (browser) {
     browser
       .url("https://www.neti.ee/")
       .waitForElementVisible("body", 2000)
@@ -38,8 +36,8 @@ module.exports = {
       .assert.urlContains("loomakaitse.eu")
       .saveScreenshot(`${config.imgpath(browser)}kassiKaitse.png`)
       .end();
-  }, 
- "Rate.ee -> Meilikasti test": function (browser) {
+  },
+  "Rate.ee -> Meilikasti test": function (browser) {
     browser
       .url("https://www.rate.ee/")
       .pause(2000)
@@ -49,7 +47,7 @@ module.exports = {
       .assert.containsText("body", "Seda lehte näevad ainult registreeritud kasutajad")
       .saveScreenshot(`${config.imgpath(browser)}rateMeil.png`)
       .end();
-  }, 
+  },
   "Example.com test": function (browser) {
     browser
       .url("https://www.example.com/")
@@ -73,7 +71,7 @@ module.exports = {
       .click("/html/body/div/div[3]/form/div[2]/div[1]/div[2]/div[2]/div[2]/center/input[1]")
       .useCss()
       .waitForElementVisible("body", 2000)
-      .getTitle(function(title) {
+      .getTitle(function (title) {
         this.assert.ok(title.includes("cat"));
       })
       .saveScreenshot(`${config.imgpath(browser)}felisCatus.png`)
@@ -81,8 +79,8 @@ module.exports = {
       .click("a[href='https://en.wikipedia.org/wiki/Cat']")
       .assert.containsText("body", "Felis catus")
       .end();
-  }, 
- "NightwatchJS test": function (browser) {
+  },
+  "NightwatchJS test": function (browser) {
     browser
       .url("https://nightwatchjs.org")
       .waitForElementVisible("body", 2000)
@@ -96,7 +94,7 @@ module.exports = {
       .assert.containsText("//*[@id='expect-elements-count']", ".elements().count")
       .saveScreenshot(`${config.imgpath(browser)}countTitle.png`)
       .end();
-  }, 
+  },
   "Ekspress test": function (browser) {
     browser
       .url("https://ekspress.delfi.ee/")
@@ -131,5 +129,5 @@ module.exports = {
       .saveScreenshot(`${config.imgpath(browser)}testEkspress2.png`)
       .pause(5000)
       .end();
-  }, 
+  },
 };
