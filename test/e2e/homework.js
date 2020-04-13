@@ -64,21 +64,21 @@ module.exports = {
 
   "Google.com test": function (browser) {
     browser
-    .url("https://www.google.com")
-    .waitForElementVisible("body", 2000)
-    .setValue('input[type=text]', ['cat', browser.Keys.ENTER])
-    .waitForElementVisible("body", 2000)
-    .getTitle(function (title) {
-      this.assert.ok(title.includes("cat"));
-    })
-    .saveScreenshot(`${config.imgpath(browser)}cat.png`)
-    .assert.containsText('body', "Wikipedia")
-    .useXpath()
-    .click("//*[contains(text(), 'Wikipedia')]")
-    .useCss()
-    .assert.containsText('body', "Felis catus")
-    .saveScreenshot(`${config.imgpath(browser)}felisCatus.png`)
-    .end();
+      .url("https://www.google.com")
+      .waitForElementVisible("body", 2000)
+      .setValue('input[type=text]', ['cat', browser.Keys.ENTER])
+      .waitForElementVisible("body", 2000)
+      .getTitle(function (title) {
+        this.assert.ok(title.includes("cat"));
+      })
+      .saveScreenshot(`${config.imgpath(browser)}cat.png`)
+      .assert.containsText('body', "Wikipedia")
+      .useXpath()
+      .click("//*[contains(text(), 'Wikipedia')]")
+      .useCss()
+      .assert.containsText('body', "Felis catus")
+      .saveScreenshot(`${config.imgpath(browser)}felisCatus.png`)
+      .end();
   },
   "NightwatchJS test": function (browser) {
     browser
