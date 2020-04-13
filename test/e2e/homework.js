@@ -71,13 +71,13 @@ module.exports = {
     .getTitle(function (title) {
       this.assert.ok(title.includes("cat"));
     })
-    .saveScreenshot(`${conf.imgpath(browser)}cat.png`)
+    .saveScreenshot(`${config.imgpath(browser)}cat.png`)
     .assert.containsText('body', "Wikipedia")
     .useXpath()
     .click("//*[contains(text(), 'Wikipedia')]")
     .useCss()
     .assert.containsText('body', "Felis catus")
-    .saveScreenshot(`${conf.imgpath(browser)}felisCatus.png`)
+    .saveScreenshot(`${config.imgpath(browser)}felisCatus.png`)
     .end();
   },
   "NightwatchJS test": function (browser) {
