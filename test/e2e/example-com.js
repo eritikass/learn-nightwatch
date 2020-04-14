@@ -1,4 +1,4 @@
-const config = require("../../nightwatch.conf.js");
+/* const config = require("../../nightwatch.conf.js");
 module.exports = {
   "Example Domain": function(browser) {
     browser
@@ -13,7 +13,7 @@ module.exports = {
       .saveScreenshot(`${config.imgpath(browser)}IANA.png`)
       .end();
   }
-}
+} */
 /* * Open http://example.com/
  * test that page contains text "Example Domain"
  * test that page has link "More information..."
