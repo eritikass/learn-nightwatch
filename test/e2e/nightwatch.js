@@ -1,4 +1,4 @@
-const config = require("../../nightwatch.conf.js");
+/* const config = require("../../nightwatch.conf.js");
 
 module.exports = {
   "Nightwatch": function(browser) {
@@ -16,7 +16,7 @@ module.exports = {
     .saveScreenshot(`${config.imgpath(browser)}nightwatch.png`)
     .end()
   }
-}
+} */
 
 /* * Open "https://nightwatchjs.org/"
  * Click "API Reference" 
