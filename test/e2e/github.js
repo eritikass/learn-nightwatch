@@ -1,4 +1,4 @@
-/* const conf = require('../../nightwatch.conf.js');
+const conf = require('../../nightwatch.conf.js');
 
 module.exports = {
   'Demo test GitHub': function (browser) {
@@ -19,4 +19,3 @@ module.exports = {
       .end();
   },
 };
- */

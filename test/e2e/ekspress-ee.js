@@ -22,19 +22,20 @@ module.exports = {
     .waitForElementVisible("//*[@id='main']/section/div[2]/div[1]/div/div[1]/div/a/figure/div/img")
     .click("//*[@id='main']/section/div[2]/div[1]/div/div[1]/div/div/a[2]")
     .useCss()
-    .pause("2000")
+    .pause("5000")
     .useXpath()
-    .isVisible("//*[@id='article-84934355']/div[1]/div/div/div[1]/div[1]/div[3]/div/div[2]/ul/li[3]/a")
-    .moveToElement("//*[@id='article-84934355']/div[2]/div/div[1]/div/div[1]/div[1]/div/h1/a[1]", 0, 0)
+    .assert.elementPresent("//*[@id='article-85017801']/div[1]/div/div/div[1]/div[1]/div[3]/div/div[2]/ul/li[3]/a", "Kuula nupp")
+    .moveToElement("//*[@id='article-85017801']/div[2]/div/div[1]/div/div[1]/div[1]/a/figure/div/img", 9, 9)
+    .pause("4000")
     .saveScreenshot(`${config.imgpath(browser)}seotud-lood.png`)
     .pause("1000")
-    .click("//*[@id='article-84934355']/div[2]/div/div[1]/div/div[1]/div[1]/div/h1/a[1]")
+    .click("//*[@id='article-85017801']/div[2]/div/div[1]/div/div[1]/div[1]/div/h1/a[1]")
     .pause("2000")
-    .isVisible("//*[@id='article-89543073']/div[1]/div[1]/div[3]/div/div[2]/ul/li[3]/a")
+    .assert.elementPresent("//*[@id='article-89550773']/div[1]/div/div/div[1]/div[1]/div[3]/div/div[2]/ul/li[3]/a", "Kuula nupp")
     .pause("2000")
-    .assert.elementPresent("//*[@id='article-89543073']/div[1]/div[1]/div[3]/div/div[1]/div/a/div[1]", "Autor")
+    .assert.elementPresent("//*[@id='article-89550773']/div[1]/div/div/div[1]/div[1]/div[3]/div/div[1]/div/a/div[2]/div[1]", "Autor")
     .saveScreenshot(`${config.imgpath(browser)}artikkel.png`)
-    
+    .end()
   }
 }
 

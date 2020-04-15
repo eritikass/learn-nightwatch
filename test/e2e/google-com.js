@@ -1,4 +1,4 @@
-/* const config = require("../../nightwatch.conf.js");
+const config = require("../../nightwatch.conf.js");
 
 module.exports = {
   "Felix cat": function(browser) {
@@ -15,7 +15,7 @@ module.exports = {
       .assert.containsText("a[href='https://en.wikipedia.org/wiki/Cat']", "Felis catus")
       .end()
   }
-}; */
+};
 
 /* * Open https://www.google.com/
  * Search "cat"

@@ -1,4 +1,4 @@
-/* const config = require("../../nightwatch.conf.js");
+const config = require("../../nightwatch.conf.js");
 
 module.exports = {
   "Postkast login test": function (browser) {
@@ -12,7 +12,7 @@ module.exports = {
       .end();
   },
 };
- */
+
 //  * Open -> https://rate.ee/login
 //  * click "Kirjakast" icon
 //  * check that error "Seda lehte näevad ainult registreeritud kasutajad." is visible

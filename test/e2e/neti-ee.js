@@ -1,15 +1,7 @@
-/* const config = require("../../nightwatch.conf.js");
+const config = require("../../nightwatch.conf.js");
 
-module.exports = { */
-  /* * Open https://www.neti.ee/
- * test that page contains text "Riik ja Ühiskond"
- * test that page contains link "Valitsus"
- * take screenshot
- * click link "Valitsus"
- * wait until page page loads
- * test that page contains text "Ametlikud Teadaanded (AT)"
- * take screenshot */
-  /* "Riik ja Ühiskond -> Valitsus": function (browser) {
+module.exports = { 
+   "Riik ja Ühiskond -> Valitsus": function (browser) {
      browser
        .url("https://www.neti.ee/")
        .waitForElementVisible("body", 2000)
@@ -23,15 +15,8 @@ module.exports = { */
        .assert.containsText("body", "Ametlikud Teadaanded (AT)")
        .saveScreenshot(`${config.imgpath(browser)}neti-ee-valitsus.png`)
        .end();
-   }, */
-   /* * Open https://www.neti.ee/
- * Search "kass"
- * Check that page contains link to "Koduloomad"
- * Open "Koduloomad"
- * Open "Eestimaa Loomakaitse Liit"
- * Check url contains "loomakaitse.eu"
- * Take screenshot */
-   /* "Koduloomad": function (browser) {
+   }, 
+    "Koduloomad": function (browser) {
      browser
        .url("https://www.neti.ee/")
        .waitForElementVisible("body", 2000)
@@ -51,7 +36,23 @@ module.exports = { */
        .saveScreenshot(`${config.imgpath(browser)}koduloomad.png`)
        .end();
    }
-};   */
+};  
 
 
 
+ /** Open https://www.neti.ee/
+ * test that page contains text "Riik ja Ühiskond"
+ * test that page contains link "Valitsus"
+ * take screenshot
+ * click link "Valitsus"
+ * wait until page page loads
+ * test that page contains text "Ametlikud Teadaanded (AT)"
+ * take screenshot */ 
+
+ /*  * Open https://www.neti.ee/
+ * Search "kass"
+ * Check that page contains link to "Koduloomad"
+ * Open "Koduloomad"
+ * Open "Eestimaa Loomakaitse Liit"
+ * Check url contains "loomakaitse.eu"
+ * Take screenshot */ 
