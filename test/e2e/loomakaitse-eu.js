@@ -4,12 +4,12 @@ module.exports = {
   "search for kassid -> loomakaitse": function (browser) {
     browser
       .url("https://www.neti.ee/")
-      .waitForElementVisible("input[name='query']", 1000) // css
+      .waitForElementVisible("input[name='query']", 3000) // css
       .setValue("input[name='query']", "kass")
       .click("input[title='Otsi']")
       .waitForElementVisible("body", 1000)
       .useXpath()
-      .waitForElementVisible("//a[@href='/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/']", 1000)
+      .waitForElementVisible("//a[@href='/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/']", 2000)
       .assert.containsText("//a[@href='/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/']", "Koduloomad")
       .click("//a[@href='/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/']")
       .useCss()

@@ -13,7 +13,6 @@ module.exports = {
       .saveScreenshot(`${config.imgpath(browser)}wikipedia-com.png`)
       .useXpath()
       .assert.containsText("//a[@href='https://en.wikipedia.org/wiki/Cat']", "Cat - Wikipedia")
-      .saveScreenshot(`${config.imgpath(browser)}example-com.png`)
       .click("//a[@href='https://en.wikipedia.org/wiki/Cat']")
       .useCss()
       .waitForElementVisible("body", 1000)
