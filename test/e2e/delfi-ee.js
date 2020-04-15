@@ -2,7 +2,6 @@ const config = require("../../nightwatch.conf.js");
 
 module.exports = {
   "Ekspress test": function (browser) {
-    var url, urlTrimmed;
     browser
     .url("https://ekspress.delfi.ee/")
     .waitForElementVisible("body", 3000) // css
