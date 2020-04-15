@@ -60,9 +60,4 @@
  * move to 3'rd page 
  * open last article from listing
  * Check that article has "kuula" button
- * Scroll to "Seotud lood" section
  * Take screenshot
- * Open 1'st article
- * Check that article has "kuula" button
- * Check that article has author
- * Take screenshot 
