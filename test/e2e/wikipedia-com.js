@@ -8,6 +8,7 @@ module.exports = {
       .waitForElementVisible("input[type='text']", 1000)
       .setValue("input[type='text']", "cat")
       .click("input[type='submit']")
+      .waitForElementVisible("body", 1000)
       .assert.titleContains("cat")
       .saveScreenshot(`${config.imgpath(browser)}wikipedia-com.png`)
       .useXpath()

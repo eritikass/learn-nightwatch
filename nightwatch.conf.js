@@ -52,8 +52,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         "chromeOptions": {
           "args": [
             `Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46
-            (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3`,
-            "--window-size=640,1136" // iphone 5
+            (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3`
           ],
           "w3c": false
         },
