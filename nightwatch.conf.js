@@ -30,8 +30,8 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         enabled: true, // save screenshots to this directory (excluded by .gitignore)
         path: SCREENSHOT_PATH,
       },
-      username: "${SAUCE_USERNAME}", // if you want to use Saucelabs remember to
-      access_key: "${SAUCE_ACCESS_KEY}", // export your environment variables (see readme)
+      username: "$SAUCE_USERNAME", // if you want to use Saucelabs remember to
+      access_key: "$SAUCE_ACCESS_KEY", // export your environment variables (see readme)
       globals: {
         waitForConditionTimeout: 10000, // wait for content on the page before continuing
       },
@@ -123,7 +123,7 @@ function padLeft(count) { // theregister.co.uk/2016/03/23/npm_left_pad_chaos/
   return count < 10 ? `0${count}` : count.toString();
 }
 
-let FILECOUNT = 0; // "global" screenshot file count
+const FILECOUNT = 0; // "global" screenshot file count
 /**
  * The default is to save screenshots to the root of your project even though
  * there is a screenshots path in the config object above! ... so we need a
@@ -138,7 +138,7 @@ function imgpath(browser) {
   meta.push(a.version ? a.version : 'any');
   meta.push(a.name); // this is the test filename so always exists.
   const metadata = meta.join('~').toLowerCase().replace(/ /g, '');
-  return `${SCREENSHOT_PATH + metadata}_${padLeft(FILECOUNT++)}_`;
+  return `${SCREENSHOT_PATH + metadata}_${padLeft(FILECOUNT)}_`;
 }
 
 module.exports.imgpath = imgpath;

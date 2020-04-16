@@ -18,6 +18,7 @@ module.exports = {
     "func-names": "off",
     "no-unused-expressions": "off",
     "quotes": "off",
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
   },
 };
