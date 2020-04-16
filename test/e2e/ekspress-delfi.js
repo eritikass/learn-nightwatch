@@ -35,7 +35,7 @@ module.exports = {
       // .pause(5000)
       // .useXpath()
       // .saveScreenshot(`${config.imgpath(browser)}ekspress-delfi-seotudlood.png`)
-      // .click('//*[@id="article-82101687"]/div[1]/div/div/div[1]/div[2]/div[3]/div[4]/div/div/div[2]/div[1]/article/a')
+      // .click()
       // .useCss()
       // .pause(6000)
       // .assert.containsText("#article-80187142", "KUULA", '2nd article has "Kuula" button')
