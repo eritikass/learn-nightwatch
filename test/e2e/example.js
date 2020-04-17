@@ -17,12 +17,3 @@ module.exports = {
       .end();
   },
 };
-
-//  * Open http://example.com/
-//  * test that page contains text "Example Domain"
-//  * test that page has link "More information..."
-//  * take screenshot
-//  * click link "More information..."
-//  * wait until new page opens
-//  * test that title is "IANA — IANA-managed Reserved Domains"   .assert.title('IANA — IANA-managed Reserved Domains')
-//  * take screenshot

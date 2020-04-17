@@ -32,7 +32,7 @@
  * take screenshot
  * click link "More information..."
  * wait until new page opens
- * test that title is "IANA — IANA-managed Reserved Domains"   .assert.title('IANA — IANA-managed Reserved Domains')
+ * test that title is "IANA — IANA-managed Reserved Domains" 
  * take screenshot
 
 -----

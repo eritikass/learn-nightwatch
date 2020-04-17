@@ -6,6 +6,7 @@ selenium-server.log
 .DS_Store
 ekspress.js
 ilm.js
+homeworks.txt
 
 # exclued selenium.jar from GitHub it's 21MB!
 nightwatch

@@ -20,12 +20,3 @@ module.exports = {
       .end();
   },
 };
-
-
-//  * Open https://www.google.com/
-//  * Search "cat"
-//  * Check title contains "cat"
-//  * Take screenshot
-//  * Check that page has wikipedia link
-//  * Open wikipedia link to article about cat
-//  * Check that article contains latin name -> "Felis catus"
