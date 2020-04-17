@@ -83,7 +83,7 @@ module.exports = {
         .url("https://nightwatchjs.org/")
         .waitForElementVisible("body", 2000) // css
         .useXpath()
-        .click("//a[@href='/api']") // xpath
+        .click("//a[@href='/api']") // xpath ?või "//*[@id='navbar']/ul/li[4]/a"
         .useCss()
         .waitForElementVisible("body", 500) // css
         .useXpath()
