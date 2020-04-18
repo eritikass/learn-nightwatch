@@ -5,6 +5,7 @@ module.exports = {
     browser
       .url("https://saku.ee/et/")
       .waitForElementVisible("body", 4000)
+      .resizeWindow(1400, 1000)
       .click('button.pwag-yes-no__option--yes')
       .pause(2000)
       .click('#id_uudised')

@@ -5,14 +5,16 @@ module.exports = {
     browser
       .url("https://www.nightwatchjs.org/")
       .waitForElementVisible('body', 2000)
-      // .assert.containsText('body', 'API')
+      .resizeWindow(1400, 1000)
+      // .pause(2000)
       .useXpath()
-      .click('//*[@id="navbar"]/ul/li[4]/a') // xpath
+      .click('//*[@class="navbar"]//*[text()="API Reference"]')      
       .useCss()
       .waitForElementVisible('body', 2000)
-      .useXpath()
-      .click('//*[@id="api-container"]/div[2]/div/div/div[1]/div/ul/li[2]/a') // xpath
-      .click('//*[@id="api-container"]/div[2]/div/div/div[1]/div/ul/li[2]/ul/li[20]/a') // xpath
+      .useXpath()      
+      .click("//a[@href='/api/expect/']")
+      // .pause(2000)      
+      .click("//a[@href='#expect-elements-count']")
       .useCss()
       .assert.containsText('body', ".elements().count")
       .saveScreenshot(`${conf.imgpath(browser)}elementscount.png`)
