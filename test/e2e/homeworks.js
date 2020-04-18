@@ -81,27 +81,27 @@ module.exports = {
       .end();
   },
   "Test for nightwatchjs": function (browser) {
-        browser
-        .url("https://nightwatchjs.org/")
-        .waitForElementVisible("body", 1000) // css
-        .resizeWindow(1200, 800)
-        .waitForElementVisible("body", 1000) // css
-        .useXpath()
-        .click('//div[@id="navbar"]//a[text()="API Reference"]') // xpath
-        .useCss()
-        .waitForElementVisible("body", 500) // css
-        .useXpath()
-        .click("//a[@href='/api/expect/']") // xpath ??
-        .useCss()
-        .waitForElementVisible("body", 500) // css
-        .useXpath()
-        .click("//a[@href='#expect-elements-count']") // xpath ??
-        .useCss()
-        .assert.containsText('#expect-elements-count', '.elements().count')
-        .saveScreenshot(`${config.imgpath(browser)}nightwatch.png`)
-        .end();
-    },
-    /*"Test for ekspress": function (browser) {
+    browser
+      .url("https://nightwatchjs.org/")
+      .waitForElementVisible("body", 1000) // css
+      .resizeWindow(1200, 800)
+      .waitForElementVisible("body", 1000) // css
+      .useXpath()
+      .click('//div[@id="navbar"]//a[text()="API Reference"]') // xpath
+      .useCss()
+      .waitForElementVisible("body", 500) // css
+      .useXpath()
+      .click("//a[@href='/api/expect/']") // xpath ??
+      .useCss()
+      .waitForElementVisible("body", 500) // css
+      .useXpath()
+      .click("//a[@href='#expect-elements-count']") // xpath ??
+      .useCss()
+      .assert.containsText('#expect-elements-count', '.elements().count')
+      .saveScreenshot(`${config.imgpath(browser)}nightwatch.png`)
+      .end();
+  },
+  /* "Test for ekspress": function (browser) {
       browser
       .url("https://ekspress.delfi.ee/")
       .waitForElementVisible("body", 1000)
@@ -121,7 +121,8 @@ module.exports = {
       .waitForElementVisible("body", 2000)
       .setValue('a.pager__button', '3')
       .useXpath()
-      .waitForElementVisible('//div[@class="pager-wrapper"]//a[@class="pager__button"]//a[text()="3"]')
+      .waitForElementVisible('//div[@class="pager-wrapper"]//
+      a[@class="pager__button"]//a[text()="3"]')
       .click('//div[@class="pager-wrapper"]//a[@class="pager__button"]//a[text()="3"]')
       //.useCss()
       //.waitForElementVisible("body", 2000)
@@ -131,10 +132,10 @@ module.exports = {
       .click('(//div[@class="headline"])[last()]')
       //kuula
       .saveScreenshot(`${config.imgpath(browser)}ekspress.png`)
-    },*/
+    }, */
 };
 
-    /*
+/*
 browser
       .url("https://rate.ee/register")
       .waitForElementVisible("body")
