@@ -17,3 +17,18 @@ module.exports = {
     browser.pause(2000).end();
   },
 };
+
+
+// browser       .url("https://rate.ee/register")       
+// .waitForElementVisible("body")       
+// .resizeWindow(1200, 800)       
+// .useXpath()       
+// //   .click('//a[@href="/kasutatud/kasutatud.php"]')       
+// .click("//a[@id='fake-city']")       
+// .useCss()       
+// .waitForElementVisible('#modal-city-name')       
+// .setValue('#modal-city-name', 'tallinn')       
+// .useXpath()       
+// .waitForElementVisible('//button[text()="Tallinn (Harju maakond)"]')       
+// .click('//button[text()="Tallinn (Harju maakond)"]')       
+// .pause(2000); 
