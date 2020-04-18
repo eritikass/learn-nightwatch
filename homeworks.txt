@@ -1,0 +1,73 @@
+
+ * Open https://www.neti.ee/
+ * test that page contains text "Riik ja Ühiskond"
+ * test that page contains link "Valitsus"
+ * take screenshot
+ * click link "Valitsus"
+ * wait until page page loads
+ * test that page contains text "Ametlikud Teadaanded (AT)"
+ * take screenshot
+
+-----
+
+ * Open https://www.neti.ee/
+ * Search "kass"
+ * Check that page contains link to "Koduloomad"
+ * Open "Koduloomad"
+ * Open "Eestimaa Loomakaitse Liit"
+ * Check url contains "loomakaitse.eu"
+ * Take screenshot
+
+-----
+
+ * Open -> https://rate.ee/login
+ * click "Kirjakast" icon
+ * check that error "Seda lehte näevad ainult registreeritud kasutajad." is visible
+
+-----
+
+ * Open http://example.com/
+ * test that page contains text "Example Domain"
+ * test that page has link "More information..."
+ * take screenshot
+ * click link "More information..."
+ * wait until new page opens
+ * test that title is "IANA — IANA-managed Reserved Domains"
+ * take screenshot
+
+-----
+
+ * Open https://www.google.com/
+ * Search "cat"
+ * Check title contains "cat"
+ * Take screenshot
+ * Check that page has wikipedia link
+ * Open wikipedia link to article about cat
+ * Check that article contains latin name -> "Felis catus"
+
+-----
+
+ * Open "https://nightwatchjs.org/"
+ * Click "API Reference" 
+ * Open "Expect" -> "count"
+ * Check count title is ".elements().count"
+ * take screenshot
+
+-----
+
+ * Open "https://ekspress.delfi.ee/"
+ * open "Areen" -> "Kirjandus"
+ * move to 3'rd page 
+ * open last article from listing
+ * Check that article has "kuula" button
+ * Take screenshot
+ 
+ 
+ ------------------------
+ 
+ chrome debug commands ( developer tools -> console )
+ 
+   * $x(XPATH_SELECTOR)
+   * document.querySelectorAll(CSS_SELECTOR)
+ 
+
