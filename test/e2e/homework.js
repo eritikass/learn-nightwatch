@@ -83,6 +83,7 @@ module.exports = {
     browser
       .url("https://nightwatchjs.org")
       .waitForElementVisible("body", 2000)
+      .resizeWindow(1280, 720)
       .useXpath()
       .click("//*[@id='navbar']/ul/li[4]/a")
       .useCss()
@@ -97,6 +98,7 @@ module.exports = {
   "Ekspress test": function (browser) {
     browser
       .url("https://ekspress.delfi.ee/")
+      .resizeWindow(1280, 720)
       .pause(3000)
       .useXpath()
       .click("//*[@id='header']/div[1]/div[2]/div[2]/div[1]/ul/li[5]/a")
