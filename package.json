@@ -10,7 +10,8 @@
     "test": "nightwatch --env local",
     "lint": "eslint 'test/**/*.js'",
     "neti": "npm run test -- test/e2e/neti.js",
-    "rate": "npm run test -- test/e2e/rate.js"
+    "rate": "npm run test -- test/e2e/rate.js",
+    "nw": "npm run test -- test/e2e/nightwatchjs.js"
   },
   "repository": {
     "type": "git",
