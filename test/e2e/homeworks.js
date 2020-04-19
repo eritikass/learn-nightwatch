@@ -21,7 +21,7 @@ module.exports = {
     browser
       .url("https://www.neti.ee")
       .waitForElementVisible("body", 2000)
-      .setValue('input[type=text]', ['kass',browser.Keys.ENTER])
+      .setValue('input[type=text]',['kass',browser.Keys.ENTER])
       .useXpath()
       .assert.containsText("//a[@href='/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/']", "Koduloomad")
       .useCss()
