@@ -1,17 +1,42 @@
 version: 2.1
-orbs:
-  node: circleci/node@1.1.6
-jobs:
-  build-and-test:
-    executor:
-      name: node/default
+
+executors:
+  node-ci-executor:
+    docker:
+      - image: circleci/node:erbium-browsers
+
+commands:
+  setup-js-job:
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm test
+      - run:
+          name: Run NPM install
+          command: npm ci
+
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  version: 2.1
+  test-workflow:
+    jobs:
+      - lint
+      - visual_test
+
+jobs:
+
+  lint:
+    executor: node-ci-executor
+    steps:
+      - setup-js-job
+      - run:
+          name: "Run linter (eslint)"
+          command: npm run lint
+
+  visual_test:
+    executor: node-ci-executor
+    steps:
+      - setup-js-job
+      - run:
+          name: "Run visual testing (Nightwatch)"
+          command: npm run test
+      - store_artifacts:
+          path: ./nightwatch
+          destination: artifact-fil
