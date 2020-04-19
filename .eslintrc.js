@@ -15,6 +15,7 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "func-names": "off",
     "no-unused-expressions": "off",
     "quotes": "off"
