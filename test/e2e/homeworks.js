@@ -108,6 +108,7 @@ module.exports = {
       .click("(//div[@class='headline'])[last()]")
       .waitForElementVisible("//div[@class='col-sm-24 col-md-8 text-right']//a[text()='Kuula']", 3000, "Kuula - OK")
       .saveScreenshot(`${config.imgpath(browser)}ekspress-delfi.png`)
+      .pause(4000)
       .end();
   },
 };
