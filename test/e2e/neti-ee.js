@@ -16,4 +16,11 @@ module.exports = {
       .saveScreenshot(`${config.imgpath(browser)}neti-ee-valitsus.png`)
       .end();
   },
+  "Meelelahutus ja Hobid": function (browser) {
+    browser
+      .url("https://www.neti.ee/")
+      .waitForElementVisible("body", 2000) // css
+      .assert.containsText("body", "Meelelahutus ja Hobid") // css
+      .end();
+  },
 };

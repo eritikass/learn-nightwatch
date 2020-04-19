@@ -4,6 +4,7 @@ module.exports = {
   "Postkast login test": function (browser) {
     browser
       .url('https://rate.ee/login')
+      .useCss()
       .waitForElementVisible("body", 2000) // css
       .click('a.icn-messages') // css
       .waitForElementVisible("body", 2000) // css

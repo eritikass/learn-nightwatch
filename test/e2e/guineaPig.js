@@ -28,6 +28,7 @@ module.exports = {
     browser.useCss();
 
     browser
+      .pause(5000)
       // .pause(2000)
       // .clearValue('#i_am_a_textbox')
       // .setValue('#i_am_a_textbox', '00000000000')
