@@ -16,6 +16,9 @@ module.exports = {
     browser
       .assert.containsText('body', 'dwyl.com') // assert body contains text
       .saveScreenshot(`${conf.imgpath(browser)}dwyl.png`)
-      .end();
+      .paus(5)
+      browser.pause(5000).resizeWindow(1000,800)
+      browser.pause(5000).resizeWindow(800,1000)
+      browser.pause(5000).end();
   },
 };

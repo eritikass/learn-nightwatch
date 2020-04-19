@@ -4,17 +4,29 @@ module.exports = {
   'Nightwatch API': function Nightwatch(browser) {
     browser
       .url("https://nightwatchjs.org/")
-      .waitForElementVisible("body", 2000) // css
-      /*.useXpath()
-      .click('//*[@id="navbar"]/ul/li[4]/a') // xpath
-      .useCss()
-      .waitForElementVisible("body", 1000)
+      .waitForElementVisible("body", 500) // css
+      .resizeWindow(1200,800) // define new window size
+      .pause (500)
       .useXpath()
-      .click("//*[@id='api-container']/div[2]/div/div/div[1]/div/ul/li[2]/a")
-      .click("//*[@id='api-container']/div[2]/div/div/div[1]/div/ul/li[2]/ul/li[20]/a")
+      .click('//div[@id="navbar"]//a[text()="API Reference"]') // xpath/*/
       .useCss()
-      .assert.containsText("//*[@id='#expect-elements-count']", ".elements().count")
-      .saveScreenshot(`${config.imgpath(browser)}nightwatch-api.png`)*/
+      .waitForElementVisible("body", 500)
+      .resizeWindow(800,1000) // define new window size
+      .pause (500)
+      .useXpath()
+      .click('//*[@id="api-container"]//a[text()="Expect"]')
+      .useCss()
+      .waitForElementVisible("body", 100)
+      .resizeWindow(1200,1500) // define new window size
+      .pause (2000)
+      .useXpath()
+      .click('//*[@id="api-container"]//a[text()="count"]')
+      .useCss()
+      .waitForElementVisible("body", 500)
+      .useXpath()
+      .assert.containsText('//*[@id="expect-elements-count"]', ".elements().count")
+      .useCss()
+      .saveScreenshot(`${config.imgpath(browser)}nightwatch-count.png`)
       .end();
     },
   };
