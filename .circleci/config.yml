@@ -39,4 +39,4 @@ jobs:
           command: npm run test
       - store_artifacts:
           path: ./nightwatch
-          destination: artifact-fil
+          destination: artifact-file
