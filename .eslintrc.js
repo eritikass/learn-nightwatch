@@ -17,6 +17,8 @@ module.exports = {
   rules: {
     "func-names": "off",
     "no-unused-expressions": "off",
-    "quotes": "off"
+    "quotes": "off",
+    "linebreak-style": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
   },
 };
