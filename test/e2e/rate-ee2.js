@@ -1,25 +1,46 @@
 const config = require("../../nightwatch.conf.js");
 
 module.exports = {
-  "Rate -> Tests and fill form": function (browser) {
-    browser //unfinished!
+/*
+ * Open -> https://rate.ee/login
+ * testi et lehe peal on facebook login nupp
+ * click "Kirjakast" icon
+ * check that error "Seda lehte näevad ainult registreeritud kasutajad." is visible
+ * click registreerit
+ * taida ara form
+*/
+  "Rate -> Fill form": function (browser) {
+    browser
+      .resizeWindow(1200, 800)
       .url("https://rate.ee/login")
-      .waitForElementVisible("body", 500)
-      .assert.visible('button.btn-facebook')
+      .waitForElementVisible("body", 2000)
+      .assert.visible('button.btn.btn-facebook')
       .click('a.icn-messages')
       .waitForElementVisible("body", 500)
       .assert.containsText("body", "Seda lehte näevad ainult registreeritud kasutajad.")
-      .click('a[class="nav-link"]') // 'a.nav-link' doesnt work (other object classes start with 'nav-link')
+      .saveScreenshot(`${config.imgpath(browser)}rate.png`)
+
+      .useXpath()
+      .click('//a[text()="Registreeri"]')
+
+      .useCss()
       .waitForElementVisible("body", 500)
-      .assert.visible("input[type=email]")
       .setValue("input[type=email]", "test_email")
       .setValue("input[type=password]", "test_password")
-      //.setValue("input[id=city-name]", "Tallinn (Harju maakond)") which action for list?
       .setValue("input[name='name']", "test_name")
-      .setValue("select[name='bd_month']", "1") //doesnt work?
+      .setValue("select[name='bd_day']", "12")
+      .setValue("select[name='bd_month']", "Detsember")
       .setValue("select[name='bd_year']", "1950")
-      //.click("input[class='magic-radio', id='11']") which action for radiobutton?
-      .saveScreenshot(`${config.imgpath(browser)}rate.png`)
+      .click('a#fake-city')
+      .waitForElementVisible('input#modal-city-name', 2000)
+      .setValue('input#modal-city-name', "tallinn")
+
+      .useXpath()
+      .waitForElementVisible('//button[text()="Tallinn (Harju maakond)"]', 2000)
+      .click('//button[text()="Tallinn (Harju maakond)"]')
+      .pause(2000)
+      .click('//*[@id="form-register"]/div[7]/label[1]')
+      .saveScreenshot(`${config.imgpath(browser)}rate2.png`)
       .end();
   },
 };
