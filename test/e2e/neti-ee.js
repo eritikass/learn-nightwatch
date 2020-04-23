@@ -11,7 +11,7 @@ module.exports = {
       .saveScreenshot(`${config.imgpath(browser)}neti-ee.png`)
       .click("//a[@href='/cgi-bin/teema/RIIK_JA_YHISKOND/Valitsus/']") // xpath
       .useCss()
-      .waitForElementVisible('body', 500) // css
+      .waitForElementVisible('body', 2000) // css
       .assert.containsText('body', 'Ametlikud Teadaanded (AT)') // css
       .saveScreenshot(`${config.imgpath(browser)}neti-ee-valitsus.png`)
       .end();
