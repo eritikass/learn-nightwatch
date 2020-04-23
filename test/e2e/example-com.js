@@ -18,7 +18,9 @@ module.exports = {
       .url("http://example.com/")
       .waitForElementVisible("html/body", 2000)
       .assert.containsText("html/body", "Example Domain")
-      .assert.containsText("//a", "More information...")
+      .expect.element("//a[text()='More information...']").to.be.present;
+
+    browser
       .saveScreenshot(`${config.imgpath(browser)}example1.png`)
       .click("//a[text()='More information...']")
       .waitForElementVisible("html/body", 500)

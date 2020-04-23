@@ -19,15 +19,14 @@ module.exports = {
       .click('//a[text()="Ilmaprognoos"]')
       .waitForElementVisible("html/body", 500)
       .saveScreenshot(`${config.imgpath(browser)}ilmateenistus1.png`)
-      .click('//*[@id="subnav"]/ul/li[1]/ul/li[2]/a[text()="Asukohapõhine prognoos"]')
+      .click("(//a[text()='Asukohapõhine prognoos'])[2]")
       .waitForElementVisible("html/body", 500)
-      .setValue('//input[@id="locality-search"]', "Pärnu linn")
+      .setValue("(//input[@type='text'])[2]", "Pärnu linn")
       .keys(browser.Keys.ENTER)
       .waitForElementVisible("html/body", 500)
-
       .useCss()
-      .assert.attributeEquals("#highcharts-0 > svg > text.highcharts-title > tspan", "textContent", "Pärnu linn, Pärnu linn, Pärnu maakond")
-      .pause(500) // Wait for graph to finish rendering
+      .assert.attributeEquals("#graph-container> div > svg > text.highcharts-title > tspan", "textContent", "Pärnu linn, Pärnu linn, Pärnu maakond")
+      .pause(1000) // Wait for graph to finish rendering
       .saveScreenshot(`${config.imgpath(browser)}ilmateenistus2.png`)
       .end();
   },

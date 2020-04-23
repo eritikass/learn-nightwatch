@@ -12,18 +12,17 @@ module.exports = {
 */
   "Kass -> Koduloomad -> Eestimaa Loomakaitse Liit -> loomakaitse.eu": function (browser) {
     browser
+      .useXpath()
       .resizeWindow(1200, 800)
       .url("https://www.neti.ee/")
-      .waitForElementVisible("body", 2000)
-      .setValue("input.input.NETIMenu", "kass")
-      .click('input[class="button sprite"]')
-      .waitForElementVisible("body", 500)
-
-      .useXpath()
-      .assert.containsText("//a[@href='/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/']", "Koduloomad")
-      .click("//a[@href='/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/']")
+      .waitForElementVisible("html/body", 2000)
+      .setValue('//input[@type="text"]', "kass")
+      .click('//input[@type="submit"]')
       .waitForElementVisible("html/body", 500)
-      .click("//a[@href='http://loomakaitse.eu/']")
+      .assert.visible('//a[@href="/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/"]/span[text()="Koduloomad"]')
+      .click('//a[@href="/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/"]/span[text()="Koduloomad"]')
+      .waitForElementVisible("html/body", 500)
+      .click("//a[text()='Eestimaa Loomakaitse Liit']")
       .waitForElementVisible("html/body", 500)
       .expect.url().to.contain("loomakaitse.eu");
     browser.saveScreenshot(`${config.imgpath(browser)}loomakaitse.png`)

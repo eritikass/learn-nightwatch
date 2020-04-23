@@ -23,10 +23,10 @@ module.exports = {
 
     browser
       .saveScreenshot(`${config.imgpath(browser)}google.png`)
-      .expect.element("//a[@href='https://en.wikipedia.org/wiki/Cat']").to.be.present;
+      .expect.element("//a[contains(@href, 'en.wikipedia.org')]/h3").to.be.present;
 
     browser
-      .click("//a[@href='https://en.wikipedia.org/wiki/Cat']")
+      .click("//a[contains(@href, 'en.wikipedia.org')]/h3")
       .waitForElementVisible("html/body", 500)
       .assert.containsText("html/body", "Felis catus")
       .end();

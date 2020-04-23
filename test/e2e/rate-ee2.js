@@ -39,7 +39,7 @@ module.exports = {
       .waitForElementVisible('//button[text()="Tallinn (Harju maakond)"]', 2000)
       .click('//button[text()="Tallinn (Harju maakond)"]')
       .pause(2000)
-      .click('//*[@id="form-register"]/div[7]/label[1]')
+      .click('//label[text()="Noormees"]')
       .saveScreenshot(`${config.imgpath(browser)}rate2.png`)
       .end();
   },

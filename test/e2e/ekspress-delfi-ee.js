@@ -15,18 +15,17 @@ module.exports = {
       .resizeWindow(1200, 800)
       .url("https://ekspress.delfi.ee/")
       .waitForElementVisible("html/body", 2000)
-      .click('//*[@id="header"]/div[1]/div[2]/div[2]/div[1]/ul/li[5]/a[text()="Areen"]')
-      .waitForElementVisible('//*[@id="header"]/div[1]/ul/li[3]/a[text()="Kirjandus"]', 2000)
-      .click('//*[@id="header"]/div[1]/ul/li[3]/a[text()="Kirjandus"]')
-      .waitForElementVisible("html/body", 2000)
-      .click('//*[@id="main"]/section/div[1]/div[1]/ul/li[6]/a')
-      .waitForElementVisible("html/body", 2000)
-      .pause(1000) // To avoid "Error while running .clickElement() protocol action:
-      // stale element reference: element is not attached to the page document" error
-      .click('//*[@id="main"]/section/div[11]/div[1]/div/div[5]/div/div/a[2]/span')
-      .waitForElementVisible("html/body", 2000)
+      .click("//a[text()='Areen']")
+      .waitForElementVisible("//a[text()='Kirjandus']", 500)
+      .click("//a[text()='Kirjandus']")
+      .waitForElementVisible("html/body", 500)
+      .click("//a[text()='»']")
+      .assert.urlEquals('https://ekspress.delfi.ee/teema/kirjandus?page=3')
+      .waitForElementVisible("(//span[text()='Loe edasi'])[last()]", 500)
+      .click("(//span[text()='Loe edasi'])[last()]")
+      .waitForElementVisible("html/body", 500)
       .assert.visible('//a[text()="Kuula"]')
-      .pause(2000) // Without pause button moves below screen cause ad loads slowly
+      .pause(2000) // Without pause button moves below screen because ad loads slowly
       .moveToElement('//a[text()="Kuula"]', 0, 0)
       .saveScreenshot(`${config.imgpath(browser)}ekspress.png`)
       .end();
