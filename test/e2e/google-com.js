@@ -10,7 +10,7 @@ module.exports = {
  * Open wikipedia link to article about cat
  * Check that article contains latin name -> "Felis catus"
 */
-  "Example Domain -> More information": function (browser) {
+  'Google -> "cat" -> Wikipedia -> "Felis catus"': function (browser) {
     browser
       .useXpath()
       .resizeWindow(1200, 800)
