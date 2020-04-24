@@ -1,16 +1,6 @@
 const config = require("../../nightwatch.conf.js");
 
 module.exports = {
-  "Rate -> Kirjakast Error": function (browser) {
-    browser
-      .url("https://rate.ee/login")
-      .waitForElementVisible("body", 2000)
-      .click('a.icn-messages')
-      .waitForElementVisible("body", 500)
-      .assert.containsText("body", "Seda lehte näevad ainult registreeritud kasutajad.")
-      .saveScreenshot(`${config.imgpath(browser)}rate.png`)
-      .end();
-  },
   /*
  * Open -> https://rate.ee/login
  * testi et lehe peal on facebook login nupp
@@ -19,7 +9,7 @@ module.exports = {
  * click registreerit
  * taida ara form
 */
-  "Rate -> Fill form": function (browser) {
+  "Rate -> Facebook login nupp -> Kirjakast Error -> Fill form": function (browser) {
     browser
       .resizeWindow(1200, 800)
       .url("https://rate.ee/login")
