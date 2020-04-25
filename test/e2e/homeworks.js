@@ -101,8 +101,8 @@ module.exports = {
       .saveScreenshot(`${config.imgpath(browser)}nightwatch.png`)
       .end();
   },
-  /* "Test for ekspress": function (browser) {
-      browser
+  "Test for ekspress": function (browser) {
+    browser
       .url("https://ekspress.delfi.ee/")
       .waitForElementVisible("body", 1000)
       .resizeWindow(1200, 800)
@@ -115,39 +115,20 @@ module.exports = {
       .click("//a[@href='/teema/kirjandus']")
       .useCss()
       .waitForElementVisible("body", 2000)
-      .useXpath()
-      .click("//a[@href='#']")
-      .useCss()
-      .waitForElementVisible("body", 2000)
-      .setValue('a.pager__button', '3')
-      .useXpath()
-      .waitForElementVisible('//div[@class="pager-wrapper"]//
-      a[@class="pager__button"]//a[text()="3"]')
-      .click('//div[@class="pager-wrapper"]//a[@class="pager__button"]//a[text()="3"]')
-      //.useCss()
-      //.waitForElementVisible("body", 2000)
+      .click("css selector", "a.pager__button--next")
       .pause(3000)
-      .waitForElementVisible("body", 2000)
+      .click("css selector", "a.pager__button--next")
+      .waitForElementVisible("body", 1000)
+      .assert.urlEquals("https://ekspress.delfi.ee/teema/kirjandus?page=3")
+      .pause(3000)
       .useXpath()
       .click('(//div[@class="headline"])[last()]')
-      //kuula
-      .saveScreenshot(`${config.imgpath(browser)}ekspress.png`)
-    }, */
-};
-
-/*
-browser
-      .url("https://rate.ee/register")
-      .waitForElementVisible("body")
-      .resizeWindow(1200, 800)
-      .useXpath()
-      //   .click('//a[@href="/kasutatud/kasutatud.php"]')
-      .click("//a[@id='fake-city']")
       .useCss()
-      .waitForElementVisible('#modal-city-name')
-      .setValue('#modal-city-name', 'tallinn')
+      .waitForElementVisible("body", 5000)
+      .pause(3000)
       .useXpath()
-      .waitForElementVisible('//button[text()="Tallinn (Harju maakond)"]')
-      .click('//button[text()="Tallinn (Harju maakond)"]')
-      .pause(2000);
-*/
+      .waitForElementVisible("//div[@class='col-sm-24 col-md-8 text-right']//a[text()='Kuula']", 5000, "Article has 'kuula' button")
+      .useCss()
+      .saveScreenshot(`${config.imgpath(browser)}ekspress.png`);
+  },
+};
