@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/dwyl/learn-nightwatch#readme",
   "dependencies": {
+    "config-js": "^1.1.13",
     "nightwatch": "^1.2.4",
     "selenium-download": "^2.0.7"
   },
