@@ -1,7 +1,7 @@
 const config = require("../../nightwatch.conf.js");
 
 module.exports = {
-  "Ilm": function (browser) {
+  Ilm(browser) {
     browser
       .url("https:/ilm.ee/")
       .waitForElementVisible("body", 5000) // css
