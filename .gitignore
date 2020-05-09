@@ -4,6 +4,7 @@ nohup.out
 selenium-debug.log
 selenium-server.log
 .DS_Store
+homeworks.txt
 
 # exclued selenium.jar from GitHub it's 21MB!
 nightwatch
