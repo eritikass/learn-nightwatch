@@ -5,13 +5,15 @@ module.exports = {
     browser
       .url("https://www.neti.ee/")
       .waitForElementVisible("body", 5000) // css
-      .resizeWindow(1200, 800)
+      .resizeWindow(1400, 1000)
       .setValue('input[type=text]', 'kass')
       .waitForElementVisible("body", 5000)
-      .click('input[type=submit]')
+      .useXpath()
+      .click('//input[@class="button sprite"]')
+      .useCss()
       .waitForElementVisible("body", 5000)
       .useXpath()
-      .assert.containsText("//a[@href='/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/']", "Koduloomad") // xpath
+      .assert.containsText("//a[@href='/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/']", "oduloomad") // xpath
       .click("//a[@href='/cgi-bin/teema/MEELELAHUTUS_JA_HOBID/Koduloomad/']") // xpath
       .click("//a[@href='http://loomakaitse.eu/']") //
       .useCss()
