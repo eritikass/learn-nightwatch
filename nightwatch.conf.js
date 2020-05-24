@@ -1,5 +1,5 @@
 const seleniumServer = require("selenium-server");
-const chromedriver = require("../chromedriver");
+const chromedriver = require("chromedriver");
 const PKG = require('./package.json'); // so we can get the version of the project
 const SCREENSHOT_PATH = "./nightwatch/screenshots/" + PKG.version + "/";
 
