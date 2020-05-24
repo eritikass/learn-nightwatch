@@ -61,13 +61,13 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         "acceptSslCerts": true
       }
     },
-    "chrome": { // your local Chrome browser (chromedriver)
-      "desiredCapabilities": {
-        "browserName": "chrome",
-        "javascriptEnabled": true,
-        "acceptSslCerts": true
-      }
-    },
+    // "chrome": { // your local Chrome browser (chromedriver)
+    //   "desiredCapabilities": {
+    //     "browserName": "chrome",
+    //     "javascriptEnabled": true,
+    //     "acceptSslCerts": true
+    //   }
+    // },
     "chromemac": { // browsers used on saucelabs:
       "desiredCapabilities": {
         "browserName": "chrome",
