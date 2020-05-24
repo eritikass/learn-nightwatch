@@ -1,7 +1,7 @@
 const conf = require('../../nightwatch.conf.js');
 
 module.exports = {
-  'Demo test GitHub': function (browser) {
+  'Demo test GitHub': function Demo(browser) {
     browser
       .url('http://www.github.com/dwyl') // visit the url
       .waitForElementVisible('body'); // wait for the body to be rendered
@@ -16,6 +16,9 @@ module.exports = {
     browser
       .assert.containsText('body', 'dwyl.com') // assert body contains text
       .saveScreenshot(`${conf.imgpath(browser)}dwyl.png`)
-      .end();
+      .pause(5)
+      browser.pause(5000).resizeWindow(1000,800)// defined window size
+      browser.pause(5000).resizeWindow(800,1000)
+      browser.pause(5000).end();
   },
 };

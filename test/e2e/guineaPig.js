@@ -1,24 +1,24 @@
-const config = require("../../nightwatch.conf.js");
+const config = require('../../nightwatch.conf.js');
 
 module.exports = {
   // addapted from: https://git.io/vodU0
-  "@tags": ["guineaPig"],
-  "Guinea Pig Assert Title": function (browser) {
+  '@tags': ['guineaPig'],
+  'Guinea Pig Assert Title': function GuineaPig(browser) {
     browser
-      .url("https://saucelabs.com/test/guinea-pig")
-      .waitForElementVisible("body")
-      .assert.title("I am a page title - Sauce Labs")
+      .url('https://saucelabs.com/test/guinea-pig')
+      .waitForElementVisible('body')
+      .assert.title('I am a page title - Sauce Labs')
       .saveScreenshot(`${config.imgpath(browser)}a-screenshot-description.png`);
 
     // document.querySelectorAll('#checked_checkbox:checked')
-    browser.expect.element("#checked_checkbox:checked").to.be.present;
+    browser.expect.element('#checked_checkbox:checked').to.be.present;
 
     // document.querySelectorAll('#unchecked_checkbox:not(:checked)')
-    browser.expect.element("#unchecked_checkbox:not(:checked)").to.be.present;
+    browser.expect.element('#unchecked_checkbox:not(:checked)').to.be.present;
 
-    browser.expect.element("div#no-element-like-this").not.to.be.present;
+    browser.expect.element('div#no-element-like-this').not.to.be.present;
 
-    browser.assert.value("input#i_am_a_textbox", "i has no focus");
+    browser.assert.value('input#i_am_a_textbox', 'i has no focus');
 
     browser
       .useXpath()
@@ -35,8 +35,8 @@ module.exports = {
       // .clearValue('#i_am_a_textbox')
       // .setValue('#i_am_a_textbox', '11111111111111')
       // .pause(2000)
-      .clearValue("#i_am_a_textbox")
-      .setValue("#i_am_a_textbox", "nightwatch roolz!")
+      .clearValue('#i_am_a_textbox')
+      .setValue('#i_am_a_textbox', 'nightwatch roolz!')
       .saveScreenshot(`${config.imgpath(browser)}nightwatch-roolz.png`)
       .end();
   },

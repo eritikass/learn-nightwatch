@@ -3,11 +3,11 @@ const utils = require('./utils');
 
 module.exports = {
   '@tags': ['sampletest'],
-  'Open the website': function (browser) {
+  'Open the website': function OpenWS(browser) {
     utils(browser).goToSite();
   },
 
-  'Go to site and add user and logout': function (browser) {
+  'Go to site and add user and logout': function AddUserLogOut(browser) {
     utils(browser).joinNow();
     utils(browser).newTestUser();
     utils(browser).mainLogo();
