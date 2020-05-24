@@ -1,6 +1,7 @@
 const conf = require('../../nightwatch.conf.js');
 
 module.exports = {
+  tags: 'github',
   'Demo test GitHub': function (browser) {
     browser
       .url('http://www.github.com/dwyl') // visit the url
