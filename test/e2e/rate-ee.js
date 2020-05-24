@@ -4,11 +4,11 @@ module.exports = {
   "Test for rate.ee": function (browser) {
     browser
       .url("https://www.rate.ee/")
-      .waitForElementVisible("body", 2000)
+      .waitForElementVisible("body")
       .useXpath()
         .click("//a[@href='https://rate.ee/mailbox']")
       .useCss()
-        .waitForElementVisible("body", 500)
+        .waitForElementVisible("body")
         .assert.containsText('body', 'Seda lehte näevad ainult registreeritud kasutajad.')
       .end()
   }

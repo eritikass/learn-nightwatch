@@ -5,7 +5,7 @@ module.exports = {
     "Testing google.ee...": function (browser) {
         browser
             .url("https://www.google.com/")
-            .waitForElementVisible("body", 2000)
+            .waitForElementVisible("body")
             .setValue('input[name=q]', ['cat', browser.Keys.ENTER])
             .getTitle(function(title) {
                 this.assert.ok(title.includes("cat"));
@@ -15,7 +15,7 @@ module.exports = {
                 .assert.containsText("//a[@href='https://en.wikipedia.org/wiki/Cat']", 'Cat - Wikipedia')
                 .click("//a[@href='https://en.wikipedia.org/wiki/Cat']")
             .useCss()
-                .waitForElementVisible("body", 2000)
+                .waitForElementVisible("body")
                 .assert.containsText("body", 'Felis catus')
             .end();
     }
