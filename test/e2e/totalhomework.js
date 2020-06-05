@@ -2,6 +2,28 @@ const config = require ("../../nightwatch.conf.js");
 
 module.exports = {
 
+//1-test
+"1_Neti-Valitsus-AT": function (browser) {
+  browser
+  .url("https://www.neti.ee")
+  .pause(3000)
+  .waitForElementVisible("body")
+  .pause(3000)
+  .assert.containsText("body", "Riik ja Ühiskond")
+  .useXpath()
+  .assert.containsText("//a[@href='/cgi-bin/teema/RIIK_JA_YHISKOND/Valitsus/']", "Valitsus")
+  .saveScreenshot(`${config.imgpath(browser)}neti-ee-valitsus.png`)
+  .click("//a[@href='/cgi-bin/teema/RIIK_JA_YHISKOND/Valitsus/']")
+  .useCss()
+  .waitForElementVisible("body")
+  .pause(3000)
+  .assert.containsText("body", "Ametlikud Teadaanded (AT)")
+  .pause(3000)
+  .saveScreenshot(`${config.imgpath(browser)}neti-ee-valitsus-AT.png`)
+  .end();
+
+  },
+
 //2-test
 "2_neti-kass-test": function (browser) {
     browser.url("https://www.neti.ee")
@@ -66,28 +88,28 @@ module.exports = {
 
 //6-test
 "count-API_ref-elements-count": function (browser) {
-    browser
-      .url("https://www.nightwatchjs.org/")
-      .waitForElementVisible('body')
-      .pause(3000)
-      .resizeWindow(1300, 800)
-      .pause(3000)
-      .useXpath()
-      .click('//*[@class="navbar"]//*[text()="API Reference"]')
-      .pause(3000)
-      .useCss()
-      .waitForElementVisible('body')
-      .pause(3000)
-      .useXpath()
-      .click("//a[@href='/api/expect/']")
-      .pause(3000)
-      .click("//a[@href='#expect-elements-count']")
-      .pause(8000)
-      .assert.containsText("//*[@id='expect-elements-count']", ".elements().count")
-      .pause(5000)
-      .saveScreenshot(`${conf.imgpath(browser)}nw-elements-count.png`)
-      .end();
-  },
+  browser
+    .url("https://www.nightwatchjs.org/")
+    .waitForElementVisible('body')
+    .pause(3000)
+    .resizeWindow(1300, 800)
+    .pause(3000)
+    .useXpath()
+    .click('//*[@class="navbar"]//*[text()="API Reference"]')
+    .pause(3000)
+    .useCss()
+    .waitForElementVisible('body')
+    .pause(3000)
+    .useXpath()
+    .click("//a[@href='/api/expect/']")
+    .pause(3000)
+    .click("//a[@href='#expect-elements-count']")
+    .pause(8000)
+    .assert.containsText("//*[@id='expect-elements-count']", ".elements().count")
+    .pause(5000)
+    .saveScreenshot(`${conf.imgpath(browser)}nw-elements-count.png`)
+    .end();
+},
 
 
 
