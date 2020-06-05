@@ -1,7 +1,7 @@
 const config = require ("../../nightwatch.conf.js");
 
 module.exports = {
-"example.com-test": function (browser) {
+"example-com-test": function (browser) {
     browser
         .url('http:www.example.com')
         .waitForElementVisible('body', 3000)

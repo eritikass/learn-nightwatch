@@ -55,4 +55,25 @@ module.exports = {
         .end();
 
     },
+
+//5-test
+
+"5_cat-google-test": function (browser) {
+    browser
+      .url("https://www.google.com/")  
+      .waitForElementVisible('body')
+      .pause(3000)
+      .setValue('input[type=text]', ['cat', browser.Keys.ENTER])
+      .getTitle(function (title) { this.assert.ok(title.includes('cat')); })
+      .saveScreenshot(`${config.imgpath(browser)}AA_cat-google.png`)
+      .assert.containsText('body', "Wikipedia")
+      .useXpath()
+      .click("//*[contains(text(), 'Wikipedia')]")
+      .useCss()
+      .assert.containsText('body', "Felis catus")
+      .pause(3000)
+      .saveScreenshot(`${config.imgpath(browser)}AA_felis-google.png`) 
+      .end()
+    },
+
 };
