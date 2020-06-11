@@ -30,6 +30,12 @@ module.exports = {
       .waitForElementVisible("body", 2000)
       .setValue('input NETIMenu', 'kass')
       .assert.containsText("href", "Koduloomad")
+      .useXpath()
+      .click("//*[@id='main-content']/div[1]/ul[1]/li[1]/div/h3/a[2]/span]")
+      .pause(2000)
+      .click("//*[@id='main-content']/div[1]/ul[1]/li[1]/h3/a")
+      .assert.urlEquals('http://loomakaitse.eu/')
+      .saveScreenshot(`${config.imgpath(browser)}neti-ee-loomakaitse.png`)
       .end();
   },
 
